@@ -1,0 +1,52 @@
+<body>
+  <header class="header">
+      <div class="logo">
+          <img style="width: 60px; height:60px" src="/assets/images/huella.png">
+      </div>
+      <nav>
+         <ul class="nav-links">
+              <li><a style="font-size: 20px;" href="#">Veterinaria "El perrito bonito"</a></li>
+         </ul>
+      </nav>
+      <a class="btn" href="#"><button>Editar mascota</button></a>
+  </header>
+
+<div style="margin: 90px;" class="">
+  <div class="col-lg-19">
+    <div class="card">
+      <div class="card-body">
+        <h1 style="padding-left: 20px; padding-top: 20px;">Editar</h1>
+        <table class="table table-hover" style="text-align: center;">
+          <tbody>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Causa</th>
+              <td>
+                <tr>Guardar</tr>
+              </td>
+            </tr>
+
+              <tr [formGroup]="Formulario">
+                <th scope="row">1</th>
+                <td><input class="shadow appearance-none border rounded w-full h-7 py-1 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
+                  formControlName="nombre" type="text" placeholder="Nombre" style="margin: 0 0 0px;">
+                <p style="margin: 0 0 0px; font-size:10px; color:red;" *ngIf="campoEsValido('nombre')">Ingrese nombre</p></td>
+                <td><input class="shadow appearance-none border rounded w-full h-7 py-1 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
+                  formControlName="edad" type="number" placeholder="Edad" style="margin: 0 0 0px;">
+                <p style="margin: 0 0 0px; font-size:10px; color:red;" *ngIf="campoEsValido('edad')">Ingrese edad</p></td>
+                <td><input class="shadow appearance-none border rounded w-full h-7 py-1 px-3 text-gray-500 leading-tight focus:outline-none focus:shadow-outline"
+                  formControlName="causa" type="text" placeholder="Causa" style="margin: 0 0 0px;">
+                <p style="margin: 0 0 0px; font-size:10px; color:red;" *ngIf="campoEsValido('causa')">Ingrese causa</p></td>
+                <td>
+                  <img style="width: 29px; cursor: pointer;" src="assets/images/salvar.png" alt="" (click)="guardar()">
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

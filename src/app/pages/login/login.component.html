@@ -1,0 +1,29 @@
+<img class="back" style="height:707px; position: absolute; background-color: #808B96;" alt="">
+
+    <div style="text-align: center;" class="contenedor">
+      <br><br><br><br><br><br><br><br>
+        <h3 style="font-size: 55px; font-family: 'Poppins', sans-serif; z-index: 1;">Inicio de sesión</h3><br>
+
+    <form class="form" [formGroup]="Formulario">
+      <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+        <mat-label>Correo</mat-label>
+        <input type="email" matInput placeholder="username@domain.com" formControlName="correo">
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Ingresa correo <strong>correctamente</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill" class="inputs">
+          <mat-label>Ingresar Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contraseña" formControlName="pass">
+            <mat-error *ngIf="emailFormControl.hasError('required')">
+              Ingresa tu contraseña<strong> correctamente</strong>
+            </mat-error>
+          </mat-form-field>
+           <br>
+<div class="example-button-row" style="position: relative">
+  <button mat-flat-button color="white" class="buttons" [disabled]="!Formulario.valid " (click)="Login()">Entrar</button>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <button mat-stroked-button color="white" class="buttons" [routerLink]="['/registro']">Registrarme</button>
+</div>
+    </form>

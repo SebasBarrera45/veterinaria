@@ -1,0 +1,53 @@
+<body>
+  <header class="header">
+      <div class="logo">
+          <img style="width: 60px; height:60px" src="/assets/images/huella.png">
+      </div>
+      <nav>
+         <ul class="nav-links">
+              <li><a style="font-size: 20px;" href="#">Veterinaria "El perrito bonito"</a></li>
+         </ul>
+      </nav>
+      <a class="btn" href=""><button [routerLink]="'/src/app/pages/menu/modal/modal.component.html'">Agregar mascota</button></a>
+  </header>
+
+<div style="margin: 90px;" class="">
+  <div class="col-lg-19">
+    <div class="card">
+      <div class="card-body">
+        <h1 style="padding-left: 20px; padding-top: 20px;">Listado de mascotas</h1>
+        <table class="table table-hover" style="text-align: center;">
+          <tbody>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Causa</th>
+              <td>
+                <tr>Borrar</tr>
+              </td>
+              <td>
+                <tr>Editar</tr>
+              </td>
+            </tr>
+
+              <tr *ngFor="let L of ListaFiltrada">
+                <td>{{L.idmascotas}}</td>
+                <td>{{L.nombreMascota}}</td>
+                <td>{{L.edadMascota}}</td>
+                <td>{{L.causa}}</td>
+                <td>
+                  <img style="width: 29px; cursor: pointer;" src="assets/images/borrar.png" alt="" *ngFor="let L of Lista" (click)="eliminar(L.idmascotas)">
+                </td>
+                <td>
+                  <a href=""></a><img style="width: 29px; cursor: pointer;" [routerLink]="'/modal'" src="assets/images/editar.png" alt="">
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+

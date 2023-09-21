@@ -1,0 +1,17 @@
+.buttons{
+  width: 165px;
+}
+
+.lapiz{
+  overflow: hidden;
+}
+
+
+.back{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  height: 10vh;
+  width: 100vw;
+}

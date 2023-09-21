@@ -1,0 +1,88 @@
+
+
+<img class="back" style="height:707px; position: absolute; background-color: #808B96;" alt="">
+<div style="padding-left: 26.8%; padding-top: 25px;">
+
+    <div style="position: relative; padding-left: 22%; padding-top: 90px;">
+      <h1 style="font-size: 60px; font-family: 'Poppins', sans-serif;" >Registro</h1>
+    </div>
+</div>
+
+<div style="text-align: center;">
+  <form class="example-form" [formGroup]="Formulario">
+
+    <br/>
+    <br/>
+
+    <!------------ INPUT NOMBRE -------------->
+    <mat-form-field class="example-full-width" style="width: 370px; height: 74px">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Nombre" formControlName="nombre" />
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Ingresa tu nombre <strong>correctamente</strong>
+      </mat-error>
+    </mat-form-field>
+    <br/>
+
+    <!------------ INPUT APELLIDO P -------------->
+    <mat-form-field class="example-full-width" style="width: 180px; height: 74px">
+      <mat-label>Apellido Paterno</mat-label>
+      <input matInput placeholder="Apellido P." formControlName="apellidoP" />
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Ingresa tu <strong>Apellido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    &nbsp;
+
+    <!------------ INPUT APELLIDO M -------------->
+    <mat-form-field class="example-full-width" style="width: 180px; height: 74px">
+      <mat-label>Apellido Materno</mat-label>
+      <input matInput placeholder="Apellido M" formControlName="apellidoM" />
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Ingresa tu <strong>Apellido</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <br />
+
+    <!------------ INPUT CORREO -------------->
+    <mat-form-field class="example-full-width" style="width: 370px; height: 74px">
+      <mat-label>Correo</mat-label>
+      <input matInput placeholder="Correo institucional" formControlName="correo" oninput="this.value = this.value.toLowerCase()" />
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Ingresa tu correo <strong>institucional</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <br />
+
+    <!------------ INPUT CONTRASEÑA -------------->
+    <mat-form-field class="example-full-width" appearance="fill" class="inputs" style="width: 370px; height: 74px">
+      <mat-label> Ingresar Contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" placeholder="Contaseña segura" formControlName="pass"/>
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Ingresa tu contarseña <strong>correctamente</strong>
+      </mat-error>
+    </mat-form-field>
+
+    <div class="flex justify-end">
+      <button class="bg-blue-600 text-white rounded-lg w-20 h-10" type="button" [disabled]="!Formulario.valid"
+          (click)="guardar()">
+          Guardar
+      </button>
+
+  </div>
+    <!-- <br />
+    <br /> -->
+
+    <div class="example-button-row" style="position: relative">
+      <button mat-flat-button color="" class="buttons" [disabled]="!Formulario.valid" (click)="guardar()">Registrarme</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <button mat-stroked-button color="" class="buttons" [routerLink]="['/login']">Regresar</button>
+    </div>
+  </form>
+</div>
