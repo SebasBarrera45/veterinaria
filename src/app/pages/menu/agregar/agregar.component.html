@@ -11,7 +11,7 @@
       <a class="btn" href=""><button [routerLink]="'/src/app/pages/menu/modal/modal.component.html'">Agregar mascota</button></a>
   </header>
 
-<div style="margin: 90px;" class="">
+<div style="margin: 90px;" [formGroup]="Formulario">
   <div class="col-lg-19">
     <div class="card">
       <div class="card-body">
@@ -23,9 +23,7 @@
               <th>Nombre</th>
               <th>Edad</th>
               <th>Causa</th>
-              <td>
-                <tr>Borrar</tr>
-              </td>
+
               <td>
                 <tr>Editar</tr>
               </td>
@@ -36,9 +34,6 @@
                 <td>{{L.nombreMascota}}</td>
                 <td>{{L.edadMascota}}</td>
                 <td>{{L.causa}}</td>
-                <td>
-                  <img style="width: 29px; cursor: pointer;" src="assets/images/borrar.png" alt="" *ngFor="let L of Lista" (click)="eliminar(L.idmascotas)">
-                </td>
                 <td>
                   <a href=""></a><img style="width: 29px; cursor: pointer;" [routerLink]="'/modal'" src="assets/images/editar.png" alt="">
                 </td>

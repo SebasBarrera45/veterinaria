@@ -14,15 +14,6 @@ const routes: Routes = [
       {path: 'registro', component: RegistroComponent},
       {path: 'agregar', component: AgregarComponent, canActivate: [AuthGuard]},
       {path: 'modal', component: ModalComponent, canActivate: [AuthGuard]},
-      // {path: 'disponible', component: DisponibleComponent, canActivate: [AuthGuard]},
-      // {path: 'disponibleE', component: DisponibleEComponent, canActivate: [AuthGuard]},
-      // {path: 'finalizadas', component: FinalizadasAComponent, canActivate: [AuthGuard]},
-      // {path: 'finalizadasE', component: FinalizadasEComponent, canActivate: [AuthGuard]},
-      // {path: 'alumnos', component: ListaAlumnosComponent, canActivate: [AuthGuard]},
-      // {path: 'pendientes', component: PendientesAComponent, canActivate: [AuthGuard]},
-      // {path: 'pendientesE', component: PendientesEComponent, canActivate: [AuthGuard]},
-      // {path: 'proceso', component: ProcesoAComponent, canActivate: [AuthGuard]},
-      // {path: 'procesoE', component: ProcesoEComponent, canActivate: [AuthGuard]},
       { path: '**',      redirectTo: 'login' }
     ]
   }

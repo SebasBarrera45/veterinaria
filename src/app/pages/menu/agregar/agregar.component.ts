@@ -21,8 +21,8 @@ export class AgregarComponent {
   Formulario: FormGroup = this.fb.group({
     idmascotas: [],
     nombre: [, [Validators.required]],
-    edad: [, [Validators.required]],
-    causa: [, [Validators.required]],
+    edad:   [, [Validators.required]],
+    causa:  [, [Validators.required]],
   })
 
   listaMascotas() {
